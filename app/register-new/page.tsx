@@ -48,26 +48,8 @@ export default function RegisterNewPage() {
       }
 
       if (data.user) {
-        // Send welcome email via our API route
-        try {
-          const response = await fetch('/api/send-welcome-email', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              email: data.user.email,
-              name: name,
-            }),
-          })
-
-          if (response.ok) {
-            console.log('Welcome email sent successfully')
-          }
-        } catch (emailError) {
-          console.error('Failed to send welcome email:', emailError)
-          // Don't block registration if email fails
-        }
+        // Welcome email endpoint is disabled
+        // Email functionality temporarily disabled to prevent build issues
 
         setSuccess(true)
         // Wait a moment to show success message, then redirect
